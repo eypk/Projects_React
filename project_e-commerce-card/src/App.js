@@ -1,9 +1,10 @@
+import Navbar from "./components/navbar";
 import "./Styles.css";
 
 export default function App() {
   return (
     <div className="App">
-      <h1>E-Commerce Project</h1>
+      <Navbar />
     </div>
   );
 }
