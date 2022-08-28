@@ -1,7 +1,15 @@
 import React from "react";
+import { useSelector } from "react-redux";
+import ProductItem from "./productItem";
 
 const ProductList = () => {
-  return <div>Product List</div>;
+  const products = useSelector((state) => state.allProducts.products);
+  console.log(products);
+  return (
+    <div className="container">
+      <ProductItem />
+    </div>
+  );
 };
 
 export default ProductList;
