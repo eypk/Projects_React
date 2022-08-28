@@ -21,6 +21,7 @@ const ProductList = () => {
   }, []);
 
   console.log("All Products :", products);
+
   return (
     <div className="container-fluid text-center">
       <ProductItem />

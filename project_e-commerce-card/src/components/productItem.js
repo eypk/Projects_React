@@ -1,11 +1,11 @@
 import React from "react";
 import { useSelector } from "react-redux";
+import { Link } from "react-router-dom";
 
 const ProductItem = () => {
   const products = useSelector((state) => state.allProducts.products);
   return (
     <div>
-      {/* cards  start*/}
       <div className="d-flex justify-content-center flex-wrap">
         {products.map((product) => (
           <div
@@ -17,19 +17,21 @@ const ProductItem = () => {
               src={product.image}
               className="card-img-top"
               style={{ height: "18rem" }}
-              alt="..."
+              alt={product.title}
             />
             <div className="card-body d-flex justify-content-center h-25">
               <div className="align-self-end">
                 <h5 className="card-title">{product.title}</h5>
                 <p className="card-text">${product.price}</p>
-                <button className="btn btn-secondary">Detail </button>
+                <p className="card-text">{product.category}</p>{" "}
+                <Link to={`product/${product.id}`}>
+                  <button className="btn btn-secondary">Detail </button>
+                </Link>
               </div>
             </div>
           </div>
         ))}
       </div>
-      {/* cards  ends*/}
     </div>
   );
 };
