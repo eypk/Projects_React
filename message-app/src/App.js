@@ -1,25 +1,25 @@
-import logo from './logo.svg';
-import './App.css';
+import React from "react";
+import Navbar from "./components/Navbar";
+import { auth } from "./firebase";
+import { useAuthState } from "react-firebase-hooks/auth";
 
-function App() {
+const style = {
+  appContainer: `max-w-[320px] mx-auto text-center`,
+  sectionContainer: `flex flex-col h-[85vh] bg-gray-200 mt-10 shadow-xl border rounded-lg relative`,
+};
+
+const App = () => {
+  const [user] = useAuthState(auth);
+  console.log(user);
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className={style.appContainer}>
+      <section className={style.sectionContainer}>
+        {/* Navbar */}
+        <Navbar />
+        {/*{user ? <Chat /> : null} */}
+      </section>
     </div>
   );
-}
+};
 
 export default App;
