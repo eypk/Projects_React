@@ -5,7 +5,7 @@ import SignIn from "./SignIn";
 import LogOut from "./LogOut";
 
 const style = {
-  nav: `bg-gray-700 h-13 flex justify-between rounded-t-lg items-center p-3`,
+  nav: `bg-gray-700 h-13 flex justify-between rounded-t-lg items-center p-3 sticky top-0  z-10`,
   heading: `text-white text-md`,
 };
 const Navbar = () => {
