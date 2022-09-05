@@ -8,7 +8,8 @@ const style = {
   button: `w-[20%] bg-green-500 rounded-br-lg`,
 };
 
-const SendMessage = ({ scroll }) => {
+const SendMessage = () => {
+// const SendMessage = ({ scroll }) => {
   const [input, setInput] = useState("");
 
   const sendMessage = async (e) => {
@@ -25,7 +26,7 @@ const SendMessage = ({ scroll }) => {
       timestamp: serverTimestamp(),
     });
     setInput("");
-    scroll.current.scrollIntoView({ behavior: "smooth" });
+    // scroll.current.scrollIntoView({ behavior: "smooth" });
   };
 
   return (

@@ -6,14 +6,15 @@ import LogOut from "./LogOut";
 
 const style = {
   nav: `bg-gray-700 h-13 flex justify-between rounded-t-lg items-center p-3 sticky top-0  z-10`,
+  navClicked: `bg-gray-700 h-13 flex justify-between rounded-lg items-center p-3 sticky top-0  z-10`,
   heading: `text-white text-md`,
 };
 const Navbar = () => {
   const [user] = useAuthState(auth);
-  console.log(user);
+  // console.log(user);
 
   return (
-    <div className={style.nav}>
+    <div className={user?`${style.nav}`:`${style.navClicked}`}>
       <h1 className={style.heading}>Chat App</h1>
       {user ? <LogOut /> : <SignIn />}
     </div>
